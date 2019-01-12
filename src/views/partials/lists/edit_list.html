@@ -1,0 +1,49 @@
+<tbody class="text-center">
+    <% for(var i = 0 ; i < usr.length ; i++) { %>
+        <% if(usr[i].Us_ID == ID) { %>
+            <tr>
+            <form action="/update_user/<%= ID %>" method="POST">
+            <td>
+                <%= usr[i].Us_ID %>
+            </td>
+            <td>
+                <input type="text" required name="Us_name" value="<%= usr[i].Us_name %>">
+            </td>
+            <td>
+                <input type="text" required name="Us_address" value="<%= usr[i].Us_address %>">
+            </td>
+            <td>
+                <select class="form-control" name="Us_relationship">
+                    <option>Family</option>
+                    <option>Friend</option>
+                    <option>Classmate</option>
+                    <option>Bussiness</option>
+                </select>
+            </td>
+            <td>
+                <button type="submit" class="btn btn-info">Accept</button>
+            </td>
+        </form>
+        </tr>
+        <% }else if(usr[i].Us_ID != ID) { %>
+        <tr>
+            <td>
+                <%= usr[i].Us_ID %>
+            </td>
+            <td>
+                <%= usr[i].Us_name %>
+            </td>
+            <td>
+                <%= usr[i].Us_address %>
+            </td>
+            <td>
+                <%= usr[i].Us_relationship %>
+            </td>
+            <td>
+                <a href="/edit_user/<%= usr[i].Us_ID %>"><i class="fa fa-edit pr-3"></i></a>
+                <a href="/erase_user/<%= usr[i].Us_ID %>"><i class="fa fa-times-rectangle"></i></a>
+            </td>
+        </tr>
+        <% } %>
+<% } %>
+</tbody>
