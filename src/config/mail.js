@@ -1,13 +1,13 @@
 const nodemailer = require('nodemailer');
-const D_sendMail = require('../index.js');
 
 module.exports = (pr_to,pr_subject,pr_text) => {
 
 //Transport data
-const tp_service = "gmail";
-const tp_user = 'pnyanecmic@gmail.com';
-const tp_password = "Crz+$%S14";
-
+//<-----------------------Configurate Mail Here------------------------>
+const tp_service = "SERVICE"; //Example "gmail"                      
+const tp_user = 'INSERT_YOU_EMAIL_HERE'; //Example "example@mail.com"
+const tp_password = "PASSWORD"; //Password
+//<-------------------------------------------------------------------->
 //ml_options
 const ml_from = tp_user;
 const ml_to = pr_to;

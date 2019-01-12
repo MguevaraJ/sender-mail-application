@@ -20,7 +20,7 @@ module.exports = server => {
             console.log("<------------UPDATE_STATE------------->");            
             console.log("UPDATE_DATA: ", "OPERATION_SUCCESSFULLY");
 
-            req.session.edit = 0;
+            server.set('edit', false);
             
         } catch (err) {
 

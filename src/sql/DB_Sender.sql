@@ -23,13 +23,3 @@ CREATE TABLE Mails(
     FOREIGN KEY(Us_ID) REFERENCES Users(Us_ID) ON DELETE CASCADE,
     Ml_timeCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
---Insert data in table Users--
-
-USE Sender;
-
-LOAD DATA LOCAL INFILE "C:/Users/anemicpony/Documents/Projects/Sql/Application/Users.csv"
-INTO TABLE Users
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\n'
-(Us_name,Us_Address,Us_relationship);
