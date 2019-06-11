@@ -4,10 +4,10 @@ const { promisify } = require('util');
  const connection = mysql.createConnection({
     //Host: User: Password: database:
 
-    "host":"localhost",
-    "user":"Mguevara",
-    "password":"Crz+$%S14",
-    "database":"Sender"
+    "host": process.env.DB_HOST,
+    "user": process.env.DB_USR,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_NAME
 });
 
 connection.connect((err) => {

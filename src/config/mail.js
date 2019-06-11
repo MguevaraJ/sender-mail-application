@@ -3,11 +3,10 @@ const nodemailer = require('nodemailer');
 module.exports = (pr_to,pr_subject,pr_text) => {
 
 //Transport data
-//<-----------------------Configurate Mail Here------------------------>
-const tp_service = "SERVICE"; //Example "gmail"                      
-const tp_user = 'INSERT_YOU_EMAIL_HERE'; //Example "example@mail.com"
-const tp_password = "PASSWORD"; //Password
-//<-------------------------------------------------------------------->
+const tp_service = process.env.MAIL_SERVICE; //Example "gmail"                      
+const tp_user = process.env.MAIL_USR; //Example "example@mail.com"
+const tp_password = process.env.MAIL_PASS; //Password
+
 //ml_options
 const ml_from = tp_user;
 const ml_to = pr_to;
@@ -30,7 +29,7 @@ const ml_options = {
 };
 transport.sendMail(ml_options, (err,info) => {
 
-    if(err) console.log("SEND_MAIL: " + err.errno);
+    if(err) console.log("SEND_MAIL: " + err);
         else console.log('SEND_MAIL:', "OPERATION_SUCCESSFULLY");
 });
 }
